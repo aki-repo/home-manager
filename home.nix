@@ -23,6 +23,7 @@
     unzip
     tree
     jq
+    yazi
 
     # Modern CLI tools
     delta         # Better git diff
@@ -31,6 +32,9 @@
     dust          # Disk usage analyzer
     procs         # Better ps
     lazygit       # Git TUI
+
+    # Fonts
+    nerd-fonts.jetbrains-mono
   ];
 
   # Environment variables
@@ -147,7 +151,7 @@
 
     shellAliases = {
       # Home Manager
-hm = "home-manager switch --flake ~/.dotfiles/home-manager#main";
+      hm = "home-manager switch --flake ~/.config/home-manager#main";
 
       # ls replacements
       ls = "eza --icons";

@@ -16,7 +16,7 @@
       # Define user configurations for different devices
       userConfigs = {
         # Primary user configuration
-        main = {
+        tp = {
           username = "aki";  # Replace with your username
           homeDirectory = "/home/aki";  # Replace with your home path
         };
