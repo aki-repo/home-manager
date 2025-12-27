@@ -4,6 +4,7 @@
   # Essential packages
   home.packages = with pkgs; [
     # Development tools
+    alacritty
     neovim
     tmux
     git
@@ -151,7 +152,7 @@
 
     shellAliases = {
       # Home Manager
-      hm = "home-manager switch --flake ~/.config/home-manager#main";
+      hm = "home-manager switch --flake ~/.config/home-manager#tp";
 
       # ls replacements
       ls = "eza --icons";
