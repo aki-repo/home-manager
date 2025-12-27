@@ -29,15 +29,15 @@
       };
 
       mkHomeConfig = name: config:
-        home-manager.lib.homeManagerConfiguration {
+      home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [
             ./home.nix
             {
               home = {
                 inherit (config) username homeDirectory;
-                stateVersion = "24.11";
-              };
+                stateVersion = "25.11";
+             };
 
               # Protect Omarchy-managed directories
               home.file.".config/omarchy".enable = false;
