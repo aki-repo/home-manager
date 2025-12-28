@@ -4,6 +4,8 @@
 imports = [
    ./cli/bash.nix
    ./cli/starship.nix
+   ./gui/walker.nix
+   inputs.walker.homeManagerModules.default
 ];
 
   # Essential packages
