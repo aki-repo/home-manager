@@ -1,12 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
-imports = [
-   ./cli/bash.nix
-   ./cli/starship.nix
-   ./gui/walker.nix
-   inputs.walker.homeManagerModules.default
-];
+    imports = [
+    ./cli/bash.nix
+  ];
 
   # Essential packages
   home.packages = with pkgs; [

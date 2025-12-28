@@ -9,15 +9,9 @@
       # This ensures home-manager uses the same nixpkgs version
       inputs.nixpkgs.follows = "nixpkgs";
      };
-    
-    elephant.url = "github:abenz1267/elephant";
-    walker = {
-    url = "github:abenz1267/walker";
-    inputs.elephant.follows = "elephant";
-   };
-  };
+      };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager,  ... }:
     let
       # Define user configurations for different devices
       userConfigs = {
@@ -36,7 +30,8 @@
 
       mkHomeConfig = name: config:
       home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
           modules = [
             ./home.nix
             {
@@ -45,11 +40,11 @@
                 stateVersion = "25.11";
              };
 
-              # Protect Omarchy-managed directories
-              home.file.".config/omarchy".enable = false;
-              home.file.".config/hypr".enable = false;
-              home.file.".config/alacritty".enable = false;
-              home.file.".config/btop/themes".enable = false;
+            # Protect Omarchy-managed directories
+            home.file.".config/omarchy".enable = false;
+            home.file.".config/hypr".enable = false;
+            home.file.".config/alacritty".enable = false;
+            home.file.".config/btop/themes".enable = false;
             }
           ];
         };
