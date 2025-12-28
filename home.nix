@@ -2,8 +2,8 @@
 
 {
 imports = [
-   ./bash.nix
-   ./starship.nix
+   ./cli/bash.nix
+   ./cli/starship.nix
 ];
 
   # Essential packages
