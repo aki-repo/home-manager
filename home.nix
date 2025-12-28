@@ -3,7 +3,8 @@
 {
 imports = [
    ./bash.nix
-]
+   ./starship.nix
+];
 
   # Essential packages
   home.packages = with pkgs; [
@@ -54,8 +55,8 @@ imports = [
   # Git configuration
   programs.git = {
     enable = true;
-    userName = "Andreas Taenzer";  # Replace with your name
-    userEmail = "andreast.work@gmail.com";  # Replace with your email
+    settings.userName = "Andreas Taenzer";  # Replace with your name
+    settings.userEmail = "andreast.work@gmail.com";  # Replace with your email
 
     delta = {
       enable = true;
@@ -72,28 +73,6 @@ imports = [
       br = "branch";
       cm = "commit -m";
       cam = "commit -am";
-    };
-  };
-
-  # Starship prompt configuration
-  programs.starship = {
-    enable = true;
-    settings = {
-      format = "$directory$git_branch$git_status$line_break$character";
-
-      character = {
-        success_symbol = "[❯](bold mauve)";
-        error_symbol = "[❯](bold red)";
-      };
-
-      directory = {
-        style = "bold blue";
-        truncate_to_repo = false;
-      };
-
-      git_branch = {
-        style = "bold purple";
-      };
     };
   };
 
