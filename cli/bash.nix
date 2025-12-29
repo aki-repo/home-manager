@@ -34,7 +34,7 @@
 
     initExtra = ''
       # CRITICAL: Ensure Nix binaries are in PATH
-      export PATH="$HOME/.nix-profile/bin:$PATH"
+      export PATH="$HOME/.nix-profile/bin:$HOME/go/bin:$PATH"
 
       # Source Nix daemon script if it exists (for multi-user installs)
       if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then

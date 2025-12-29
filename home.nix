@@ -3,6 +3,7 @@
 {
     imports = [
     ./cli/bash.nix
+    ./cli/starship.nix
   ];
 
   # Essential packages
@@ -29,6 +30,7 @@
     tree
     jq
     yazi
+    qalculate-gtk
 
     # Modern CLI tools
     delta         # Better git diff
@@ -54,9 +56,9 @@
   # Git configuration
   programs.git = {
     enable = true;
-    settings.userName = "Andreas Taenzer";  # Replace with your name
-    settings.userEmail = "andreast.work@gmail.com";  # Replace with your email
-
+    userName = "Andreas Taenzer";  # Replace with your name
+    userEmail = "andreast.work@gmail.com";  # Replace with your email
+  
     delta = {
       enable = true;
       options = {
