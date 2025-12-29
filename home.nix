@@ -15,10 +15,6 @@
     git
     starship
     fzf
-    ripgrep
-    fd
-    bat
-    eza
     zoxide
 
     # System utilities
@@ -30,18 +26,13 @@
     tree
     jq
     yazi
-    qalculate-gtk
 
     # Modern CLI tools
-    delta         # Better git diff
-    tokei         # Code statistics
-    bottom        # System monitor
-    dust          # Disk usage analyzer
-    procs         # Better ps
     lazygit       # Git TUI
 
     # Fonts
     nerd-fonts.jetbrains-mono
+    nerd-fonts.hack
   ];
 
   # Environment variables
